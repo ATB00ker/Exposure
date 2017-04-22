@@ -1,0 +1,94 @@
+/**************************
+* General Code
+**************************/
+.absolute-center{
+	position: absolute;
+	margin: auto;
+	left: 0; right: 0;
+	top: 0; bottom: 0;
+}
+/**************************
+* Header Styles 
+**************************/
+.masthead {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    margin: 0px;
+    z-index: 99999;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.open>a:hover {
+    background: transparent;
+    box-shadow: none;
+    color: #ffffff;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    background: transparent;
+}
+.navbar-nav>li>a {
+    box-shadow: none;
+    color: #ffffff !important;
+    font-size: 1.8em;
+    margin: 20px 20px;
+    font-weight: bold;
+}
+.mobBtn{
+    margin: 20px 20px;
+	border: none;
+	font-size: 25px;
+	color: red;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+	background: rgba(0,0,0,0);
+}
+@media all and (max-width:767px){
+	nav ul li{
+		width: 100%;
+	}
+}
+/**************************
+* Introduction Page Styles
+**************************/
+.parallax-container {
+	height: 900px;
+	width:100%;
+	background-size: 100% auto;
+}
+/**************************
+* About Page Styles
+**************************/
+#about{
+	background-color:#fdfcf9;
+	height: 1000px;
+}
+#aboutTitle{
+	margin: 10%;
+	font-family: lobster, cursive;
+	font-size: 40px;
+	text-align: center;
+}
+#eventCoverage{
+	width: 100px;
+	height: 100px;
+}
+#eventCoverage img{
+	transform: rotate(-1deg);
+	width: 325px;
+}
+/**************************
+* Testing Page Styles
+**************************/
+#panic1{
+	background-color:#234a21;
+	height: 1000px;
+}
+#panic2{
+	background-color:#132127;
+	height: 1000px;
+}
