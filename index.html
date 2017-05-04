@@ -19,16 +19,19 @@
      <link href="assets/images/navLogo.png" rel="shortcut icon">
      <link href="assets/images/navLogo.png" rel="apple-touch-icon">
 
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Core Styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Font Awesome CSS -->
+	<!-- Font Awesome Styles -->
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Oswald|Roboto+Condensed|Lobster|Aladin" rel="stylesheet">
-    <!-- Custom CSS -->
+	
+    <!-- Materialize Styles-->
 	<link href="assets/css/materialize.min.css" rel="stylesheet" />
+    
+	<!-- Custom Styles -->
 	<link href="assets/css/main.css" rel="stylesheet" />
     <!--link href="assets/css/animations.css" rel="stylesheet" /-->
 
@@ -50,32 +53,64 @@
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <nav id="main-menu" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="#about">About</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul id="NavigationList" class="nav navbar-nav">
         </ul>
       </nav><!-- /.navbar-collapse -->
     </div><!-- /.container -->
+	<audio>
+		<source src=".\assets\sounds\Click.mp3" type="audio/mpeg">
+	</audio>
   </header><!-- /#masthead -->
-<section>
-<div class="parallax-container">
+<section class="parallax-container">
 	<div class="parallax"><img src="./assets/images/homeBackground.jpg"></div>
-</div>
 </section>
-<section id="about">
+<section class="parallax-container" id="about">
+<div class="container-fluid">
+	<div class="row">
+		<div class="text-center" id="aboutTitle">The Official Photography club of Amity School of Engineering and Technology</div>
+	</div>
+</div>
 <div class="container">
 	<div class="row">
-		<div class="text-center" id="aboutTitle">The official photography club of Amity School of Engineering and technology<div>
+		<div class="aboutCommon" id="eventCoverage">
+			<div id="eventCoveragePics">
+				<div id="pic1"><img src="./assets/images/about/eventCoverage (1).jpg"></div>
+				<div id="pic2"><img src="./assets/images/about/eventCoverage (2).jpg"></div>
+				<div id="pic3"><img src="./assets/images/about/eventCoverage (3).jpg"></div>
+				<div id="pic4"><img src="./assets/images/about/eventCoverage (4).jpg"></div>
+			</div>
+			<div class="aboutCommonDescription" id="eventCoverageDescription">Event Coverage<p>Get the oppertunity to cover any event inside amity.</p></div>
+		</div>
+	</div>
+	<div class="row">
+		<div id="eventCompetition" class="aboutCommon">
+			<div class= "col-sm-5"></div>
+			<div class= "col-sm-7">
+				<div id="pic5">
+						<div id="eventCompetitionDescription" class="aboutCommonDescription">Event Competition<p>This is your opertunity to Outshine the other photographers.</p></div>
+					<img src="./assets/images/about/eventCompetition.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="aboutCommon" id="photowalk">
+		<div class="col-xs-12">
+			<div class="col-xs-4" id="photowalkPic1"><img src="./assets/images/about/Walk1.jpg"></div>
+			<div class="col-xs-4" id="photowalkPic2"><img src="./assets/images/about/Walk2.jpg"></div>
+			<div class="col-xs-4" id="photowalkPic3"><img src="./assets/images/about/Walk3.jpg"></div>
+		</div>
+			<div class="aboutCommonDescription" id="photowalkDescription">Photowalk<p>Participate in bi-weekly photowalks to hone your skills.</p></div>
+		</div>
+	</div>
+	<div class="row">
+		<div id="intrnlCmpt" class="intrnlCmpttext aboutCommon">
+			<div><img src=""></div>
+			<div class="aboutCommonDescription" id="intrnlCmptDescription">Internal Compitions<p>Weekly winnners are announced of facebook.</p></div>
+			<div id="redBorder"></div>
+		</div>
 	</div>
 </div>
-<!--div class="container-fuild">
-	<div class="row">
-		<div class="text-center col-xs-5" id="eventCoverage"><img src="./assets/images/eventCoverage.jpg"><div>
-	</div>
-</div-->
-
 </section>
 <section id="panic1">
 </section>
@@ -87,15 +122,17 @@
 	<!-- Bootstrap Core JavaScript -->
 	<script src="assets/js/bootstrap.min.js"></script>
 	
-	<!-- GreenSock Animations JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/easing/EasePack.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
+	<!-- Kute Animations JavaScript -->
+	<script src="https://cdn.jsdelivr.net/g/kute.js@1.6.2(kute.min.js+kute-css.min.js+kute-attr.min.js+kute-svg.min.js+kute-text.min.js+kute-jquery.min.js)"></script>
 
+	<!-- Materialize JavaScript -->
+	<script src="assets/js/materialize.min.js"></script>
+	
+	<!-- ScrollReveal JavaScript -->
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+	
 	<!-- Functionality Scripts -->
 	<script src="assets/js/functions.js"></script>
-	<script src="assets/js/scrollreveal.js"></script>
 	<script src="assets/js/animations.js"></script>
-	<script src="assets/js/materialize.min.js"></script>
 </body>
 </html>

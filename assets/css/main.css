@@ -35,13 +35,16 @@
     box-shadow: none;
     color: #ffffff !important;
     font-size: 1.8em;
-    margin: 20px 20px;
+    margin: 17px 19px;
     font-weight: bold;
 }
+.navbar-nav>li>a:hover {
+    font-size: 2.1em;
+}
 .mobBtn{
-    margin: 20px 20px;
+    margin: 15px 19px;
 	border: none;
-	font-size: 25px;
+	font-size: 2.1em;
 	color: red;
 }
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
@@ -63,9 +66,22 @@
 /**************************
 * About Page Styles
 **************************/
+/*********** About Title ***********/
 #about{
 	background-color:#fdfcf9;
-	height: 1000px;
+	height: 3000px!important;
+}
+@media all and (max-width:499px){
+	#aboutTitle{
+	margin: 10%!important;
+	font-size: 22px!important;		
+	}
+}
+@media all and (min-width:500px) and (max-width:660px){
+	#aboutTitle{
+	margin: 10%!important;
+	font-size: 30px!important;		
+	}
 }
 #aboutTitle{
 	margin: 10%;
@@ -73,13 +89,196 @@
 	font-size: 40px;
 	text-align: center;
 }
-#eventCoverage{
-	width: 100px;
-	height: 100px;
+/*********** About Box Common Styles ***********/
+.aboutCommon{
+	position: relative;
+	top: 0px;
+	width: 100%;
 }
-#eventCoverage img{
-	transform: rotate(-1deg);
+.aboutCommon img{
+	border-radius: 2px;
+	overflow: hidden;
+}
+.aboutCommonDescription{
+	color: #A8A8A8;
+	margin: 10px;
+	border-left: 2px solid;
+	text-align: left;
+	font-size: 18px;
+	width: 265px;
+	padding-left: 3px;
+}
+.aboutCommonDescription p{
+	opacity: 0.8;
+	padding-left: 5px;
+	font-size: 14px;
+	left: 0;
+}
+/*********** Event Coverage Styles ***********/
+@media all and (max-width: 767px){
+	#eventCoveragePics{
+		left:0;
+		right:0;
+		margin: auto;
+	}
+}
+#eventCoveragePics{
+	position: relative;
+	top:0;
+	left:0;
 	width: 325px;
+	height: 450px;
+	overflow: hidden;
+}
+#eventCoveragePics img{
+	width: 325px;
+}
+#pic1{
+	max-width: 325px;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 1;
+}
+#pic2{
+	max-width: 325px;
+	position: absolute;
+	top:0;
+	left:0;
+}
+#pic3{
+	max-width: 325px;
+	position: absolute;
+	top:0;
+	left:0;
+}
+#pic4{
+	max-width: 325px;
+	position: absolute;
+	top:0;
+	left:0;
+}
+/*********** Event Competition Styles ***********/
+#eventCompetition{
+	position: relative;
+	width: 100%;
+}
+#pic5{
+	width: 100%;
+	position: absolute;
+    top: -200px;
+}
+#pic5 img{
+	width: 100%;
+	min-width: 325px;
+}
+#eventCompetitionDescription{
+    position: absolute;
+	right: 0;
+	top: -95px;
+	border-left: 0;
+	border-right: 2px solid;
+	text-align: right;
+	padding-right: 3px;
+}
+@media all and (max-width: 340px){
+	#pic5 img{
+	position: absolute;
+	left: -20px;
+	}
+}
+@media all and (min-width: 341px) and (max-width: 370px){
+	#pic5 img{
+	position: absolute;
+	left: -10px;
+	}
+}
+@media all and (max-width: 767px){
+	#eventCompetition{
+		left: 0;
+		transform: none;
+	}
+	#pic5{
+		width: 100%;
+		right: 0;
+		left: 0;
+		margin: auto;
+		top: 0;
+	}
+	#eventCompetitionDescription{
+		position: absolute;
+		right: 0;
+		border-left: 0;
+		border-right: 2px solid;
+		text-align: right;
+		padding-right: 3px;
+		margin: 0;
+	}
+}
+#eventCompetitionDescription p{	padding-right: 5px;}
+/*********** PhotoWalk Section ***********/
+@media all and (max-width: 767px){
+	#photowalk{
+	margin-top: 270px;
+	}
+}
+@media all and (max-width: 600px){
+	#photowalk{
+	margin-top: 230px;
+	}
+}
+@media all and (max-width: 460px){
+	#photowalk{
+	margin-top: 190px;
+	}
+}
+#photowalk{
+	position: relative;	
+}
+#photowalk img{
+	width: 100%;
+}
+#photowalkPic1{
+	margin: 10px 0px 10px 0px;
+    -ms-transform: matrix(-1, 0.07, 0, 1, 15, 10) /* IE 9 */
+    -webkit-transform: matrix(-1, 0.07, 0, 1, 15, 10); /* Safari */
+    transform: matrix(-1, -0.07, 0, 1, 15, -10); /* Standard syntax */
+}
+#photowalkPic1 img{
+	box-shadow: 10px 3px 10px #888888;
+}
+#photowalkPic2{
+	overflow: hidden;
+	margin: 10px 0px 10px 0px;
+}
+#photowalkPic3{
+	overflow: hidden;
+	margin: 10px 0px 10px 0px;
+    -ms-transform: matrix(-1, 0.07, 0, 1, 15, 10) /* IE 9 */
+    -webkit-transform: matrix(-1, 0.07, 0, 1, 15, 10); /* Safari */
+    transform: matrix(1, 0.07, 0, 1, -15, 10); /* Standard syntax */
+}
+#photowalkPic3 img{
+	box-shadow: 2px -1px 5px #888888;
+}
+#photowalkDescription{
+	width: 100%;
+	border: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 24px;
+}
+#photowalkDescription p{
+	font-size: 18px;	
+}
+/*********** Competition Styles ***********/
+#redBorder{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 270px;
+	height: 410px;
+	border: 2px solid red;
 }
 /**************************
 * Testing Page Styles
