@@ -15,13 +15,15 @@ var navContainer = document.querySelector('header .container-fluid'),
 	photowalkPic1 = document.querySelector('#photowalkPic1'),
 	photowalkPic2 = document.querySelector("#photowalkPic2"),
 	photowalkPic3 = document.querySelector('#photowalkPic3'),
+	logoExpand = document.querySelector('#logoExpand'),
+	redBorder = document.querySelector('#redBorder'),
 	eventCompetition = document.querySelector("#eventCompetition");
 /**************************
-* Scroll Only Animations
+* Animations
 **************************/
 var	navCollapseFlag=0;
-$(window).scroll(function() {
 						/*********** Navigation Bar ***********/
+$(window).scroll(function() {
 	var scroll = $(window).scrollTop();
 	if(navCollapseFlag==0){
 		if(scroll>$(window).height()-100){
@@ -31,15 +33,11 @@ $(window).scroll(function() {
 		}
 	}
 });
-/**************************
-* On Click Only Animations
-**************************/
-						/*********** Navigation Bar ***********/
 $(".mobBtn").on("click", function() {
 	var scroll = $(window).scrollTop();
 	if(navCollapseFlag==0){
 	KUTE.to(mobBtn, {rotate: 45},{duration: 100}).start();
-	KUTE.to(navContainer,{height:$(window).height()},{duration: 350}).start();
+	KUTE.to(navContainer,{height:$(window).height()*1.2},{duration: 350}).start();
 	$(navContainer).css( "background", "rgba(0, 0, 0, 0.3)" );
 	navCollapseFlag=1;
 	}else{KUTE.to(mobBtn, {rotate: 0},{duration: 100}).start();
@@ -48,9 +46,23 @@ $(".mobBtn").on("click", function() {
 		$(navContainer).css( "background", "rgba(0, 0, 0, 0)");
 	navCollapseFlag=0;}
 });
-/**************************
-* General Animation
-**************************/
+					/*********** Home Section ***********/
+$("#logo").css( "opacity", "1" );
+KUTE.to(logoExpand, {width:728}, {duration: 0.01}).start();
+KUTE.to(logoExpand, {width:0}, {duration: 400, easing: 'easeInOutExpo', delay: 700}).start();
+setTimeout(function(){$("#logo").css( "opacity", "0.7")}, 750);
+$("#logo img").mouseenter(function(){
+	KUTE.to(logoExpand, {width:728}, {duration: 200, easing: 'easeInOutExpo'}).start();
+	$("#logo").css( "opacity", "1" );
+});
+$("#logo").mouseleave(function(){
+	KUTE.to(logoExpand, {width:0}, {duration: 200, easing: 'easeInOutExpo'}).start();
+	$("#logo").css( "opacity", "0.7" );
+});
+$("#logoExpand img").mouseleave(function(){
+	KUTE.to(logoExpand, {width:0}, {duration: 200, easing: 'easeInOutExpo'}).start();
+	$("#logo").css( "opacity", "0.7" );
+});
 					/*********** About Section ***********/
 						/******* Event Coverage *******/
 var animationEventCoverage = KUTE.to(pic4,{scale:0.0001},{duration:0.01})
@@ -106,49 +118,101 @@ function eventCompetitions() {
 var photowalkFlag = false;
 KUTE.fromTo(photowalkPic1,{opacity: 1, left: 100}, {opacity: 0, left: 0}, {duration: 100}).start();
 KUTE.fromTo(photowalkPic3,{opacity: 1, left: -100}, {opacity: 0, left: 0}, {duration: 100}).start();
-if(isTouchDevice!="nope"){
-	$(window).scroll(function(){
-		if($(photowalkPic2).isInViewportMiddle()){
-			if(photowalkFlag==false){
-				KUTE.to(photowalkDescription, {color: '#000'}, {duration: 100}).start();
-				KUTE.fromTo(photowalkPic1,{opacity: 0, left: 100}, {opacity: 1, left: 0}, {duration: 100}).start();
-				KUTE.fromTo(photowalkPic3,{opacity: 0, left: -100}, {opacity: 1, left: 0}, {duration: 100}).start();
-				if($(window).width() > 500)	
-				$(photowalkDescription).css( "fontSize", "+=4px" );
-				photowalkFlag = true;
-			}
-		} else{
-				if(photowalkFlag==true){
-					KUTE.fromTo(photowalkPic1,{opacity: 1, left: 100}, {opacity: 0, left: 0}, {duration: 100}).start();
-					KUTE.to(photowalkDescription, {color: '#A8A8A8'}, {duration: 100}).start();
-					KUTE.fromTo(photowalkPic3,{opacity: 1, left: -70}, {opacity: 0, left: 0}, {duration: 100}).start();
-					if($(window).width() > 500)
-					$(photowalkDescription).css( "fontSize", "-=4px" );
-					photowalkFlag = false;
-				}
-			}
-	});
-} else {
-	$(photowalkPic2).mouseenter(function(){
-		if(photowalkFlag == false) {
+$(photowalkPic2).addClass("shake-slow shake-constant");
+$(window).scroll(function(){
+	if($(photowalkDescription).isInViewportMiddle()){
+		if(photowalkFlag==false){
+			$(photowalkPic2).removeClass("shake-slow shake-constant");
 			KUTE.to(photowalkDescription, {color: '#000'}, {duration: 100}).start();
 			KUTE.fromTo(photowalkPic1,{opacity: 0, left: 100}, {opacity: 1, left: 0}, {duration: 100}).start();
 			KUTE.fromTo(photowalkPic3,{opacity: 0, left: -100}, {opacity: 1, left: 0}, {duration: 100}).start();
-			if($(window).width() > 500)
+			if($(window).width() > 624)
 			$(photowalkDescription).css( "fontSize", "+=4px" );
 			photowalkFlag = true;
 		}
-	});
-	
-	$("#photowalk").mouseleave(function(){
+	} else {
+		if(photowalkFlag==true){
+			$(photowalkPic2).addClass("shake-slow shake-constant");
+			KUTE.fromTo(photowalkPic1,{opacity: 1, left: 100}, {opacity: 0, left: 0}, {duration: 100}).start();
+			KUTE.to(photowalkDescription, {color: '#A8A8A8'}, {duration: 100}).start();
+			KUTE.fromTo(photowalkPic3,{opacity: 1, left: -70}, {opacity: 0, left: 0}, {duration: 100}).start();
+			if($(window).width() > 624)
+			$(photowalkDescription).css( "fontSize", "-=4px" );
+			photowalkFlag = false;				
+		}	
+	}
+});
+$(photowalkPic2).mouseenter(function(){
+	if(photowalkFlag == false) {
+		$(photowalkPic2).removeClass("shake-slow shake-constant");
+		KUTE.to(photowalkDescription, {color: '#000'}, {duration: 100}).start();
+		KUTE.fromTo(photowalkPic1,{opacity: 0, left: 100}, {opacity: 1, left: 0}, {duration: 100}).start();
+		KUTE.fromTo(photowalkPic3,{opacity: 0, left: -100}, {opacity: 1, left: 0}, {duration: 100}).start();
+		if($(window).width() > 624)
+		$(photowalkDescription).css( "fontSize", "+=4px" );
+		photowalkFlag = true;	
+	}
+});
+$("#photowalk").mouseleave(function(){
+	if(photowalkFlag == true) {
+		$(photowalkPic2).addClass("shake-slow shake-constant");
 		KUTE.fromTo(photowalkPic1,{opacity: 1, left: 100}, {opacity: 0, left: 0}, {duration: 100}).start();
 		KUTE.to(photowalkDescription, {color: '#A8A8A8'}, {duration: 100}).start();
 		KUTE.fromTo(photowalkPic3,{opacity: 1, left: -70}, {opacity: 0, left: 0}, {duration: 100}).start();
 		$(photowalkDescription).css( "fontSize", "-=4px" );
-		if($(window).width() > 500)
+		if($(window).width() > 624)
 		photowalkFlag = false;
-	});
-}	
+	}
+});
+
+					/*******Internal Competition Section *******/
+var borderFlag = false;
+$("#detectTopRight").mouseenter(function(){
+	if(borderFlag==false){
+		KUTE.to(redBorder,{left: 100, top: -15}, {duration:300, easing: 'easingCubicOut'}).start();
+		borderFlag = true;
+	} else
+		KUTE.to(redBorder,{left: 100, top: -15}, {duration:2500, easing: 'easingCubicOut'}).start();
+});
+$("#detectTopCenter").mouseenter(function(){
+	if(borderFlag==false){
+		KUTE.to(redBorder,{left: 50, top: -15}, {duration:300, easing: 'easingCubicOut'}).start();
+		borderFlag = true;
+	} else
+		KUTE.to(redBorder,{left: 50, top: -15}, {duration:2500, easing: 'easingCubicOut'}).start();
+});
+$("#detectTopLeft").mouseenter(function(){
+	if(borderFlag==false){
+		KUTE.to(redBorder,{left: 0, top: -15}, {duration:300, easing: 'easingCubicOut'}).start();
+		borderFlag = true;
+	} else
+		KUTE.to(redBorder,{left: 0, top: -15}, {duration:2500, easing: 'easingCubicOut'}).start();
+});
+$("#detectBottomRight").mouseenter(function(){
+	if(borderFlag==false){
+		KUTE.to(redBorder,{left: 100, top: 50}, {duration:300, easing: 'easingCubicOut'}).start();
+		borderFlag = true;
+	} else
+		KUTE.to(redBorder,{left: 100, top: 50}, {duration:2500, easing: 'easingCubicOut'}).start();
+});
+$("#detectBottomCenter").mouseenter(function(){
+	if(borderFlag==false){
+		KUTE.to(redBorder,{left: 50, top: 50}, {duration:300, easing: 'easingCubicOut'}).start();
+		borderFlag = true;
+	} else
+		KUTE.to(redBorder,{left: 50, top: 50}, {duration:2500, easing: 'easingCubicOut'}).start();
+});
+$("#detectBottomLeft").mouseenter(function(){
+	if(borderFlag==false){
+		KUTE.to(redBorder,{left: 0, top: 50}, {duration:300, easing: 'easingCubicOut'}).start();
+		borderFlag = true;
+	} else
+		KUTE.to(redBorder,{left: 0, top: 50}, {duration:2500, easing: 'easingCubicOut'}).start();
+});
+$("#internalCmpt").mouseleave(function(){
+		KUTE.to(redBorder,{left: 40, top: 10}, {duration:100, easing: 'easeOutQuad', delay: 2500}).start();
+		borderFlag = false;
+});
 /**************************
 * Navigation Bar Hover Sound
 **************************/

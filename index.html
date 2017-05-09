@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Search engine optimisatin -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Official Amity Exposure Website">
+    <meta name="keywords" content="Official Exposure Website, Amity, Amity Exposure, Exposure, Photography, Amity Photography, Photowalk, NCR Photography">
+    <meta name="author" content="Exposure">
 	<!-- End Search Engine Optimisation -->
     <!-- Browser tab theme color for Chrome on Android -->
     <meta name="theme-color" content="#000">
@@ -23,14 +23,17 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Font Awesome Styles -->
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+	<script src="https://use.fontawesome.com/8fda296a12.js"></script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Anton|Oswald|Roboto+Condensed|Lobster|Aladin" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster+Two|Baloo" rel="stylesheet">
 	
     <!-- Materialize Styles-->
 	<link href="assets/css/materialize.min.css" rel="stylesheet" />
     
+	<!-- Shake Styles -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.1/csshake-slow.min.css" integrity="sha256-CnjVPwSgcgQhdo5bgWVwV7f2sifHZxjTkYRV9+xDAQk=" crossorigin="anonymous" />
+	
 	<!-- Custom Styles -->
 	<link href="assets/css/main.css" rel="stylesheet" />
     <!--link href="assets/css/animations.css" rel="stylesheet" /-->
@@ -49,6 +52,7 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
+	     <p class="navbar-text visible-xs-inline-block">Exposure</p>
         <button type="button" class="navbar-toggle collapsed mobBtn" data-toggle="collapse" data-target="#main-menu"><i class="fa fa-plus"></i></button>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,6 +67,8 @@
   </header><!-- /#masthead -->
 <section class="parallax-container">
 	<div class="parallax"><img src="./assets/images/homeBackground.jpg"></div>
+	<div id="logo"><img src="./assets/images/logo.jpg">
+	<div id="logoExpand"><img src="./assets/images/logoExpand.jpg"></div></div>
 </section>
 <section class="parallax-container" id="about">
 <div class="container-fluid">
@@ -102,12 +108,36 @@
 		</div>
 			<div class="aboutCommonDescription" id="photowalkDescription">Photowalk<p>Participate in bi-weekly photowalks to hone your skills.</p></div>
 		</div>
+	<div class="row">
+		<div class="aboutCommon">
+			<div id="workshops">
+				<div class="col-xs-6" id="workshopsPic1"><img src="./assets/images/about/workshop1.jpg">
+				<div class="aboutCommonDescription">Workshops<p>Attend the informative to learn about getting better clicks and editing.</p></div></div>
+				<div class="col-xs-6" id="workshopsPic2"><img src="./assets/images/about/workshop2.jpg"></div>
+			</div>
+		</div>
 	</div>
 	<div class="row">
-		<div id="intrnlCmpt" class="intrnlCmpttext aboutCommon">
-			<div><img src=""></div>
-			<div class="aboutCommonDescription" id="intrnlCmptDescription">Internal Compitions<p>Weekly winnners are announced of facebook.</p></div>
+	<div  class="col-sm-7">
+		<div id="internalCmpt" class="aboutCommon col-xs-12">
+			<div><img src="./assets/images/about/InternalCmpt.jpg"></div>
+			<div id="detectTopRight"></div>
+			<div id="detectTopCenter"></div>
+			<div id="detectTopLeft"></div>
+			<div id="detectBottomRight"></div>
+			<div id="detectBottomCenter"></div>
+			<div id="detectBottomLeft"></div>
+			<div class="aboutCommonDescription" id="internalCmptDescription">Internal Compitions<p>Weekly winnners are announced of facebook.</p></div>
 			<div id="redBorder"></div>
+		</div>
+	</div>
+		<div id="contactUs" class="col-sm-5">
+		<a href="./Redirect.html" class="btn-large waves-effect waves-light red contactButtons"><i class="fa fa-camera-retro" aria-hidden="true"></i>Join now</a>
+		<a href="https://www.facebook.com/exposureamity/" class="btn-large waves-effect waves-light blue darken-4 contactButtons"><i class="fa fa-facebook-square" aria-hidden="true"></i>Facebook</a>
+		<a href="https://www.instagram.com/exposure.amity/?hl=en" class="btn-large waves-effect waves-light pink lighten-1 contactButtons"><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a>
+		<a href="./Redirect.html" class="btn-large waves-effect waves-light green darken-1 contactButtons"><i class="fa fa-whatsapp" aria-hidden="true"></i>Whatsapp</a>
+		<a class="btn-large waves-effect waves-light deep-orange accent-3 lighten-2 contactButtons smallFont"><i class="fa fa-phone" aria-hidden="true"></i>980XXXXXXX</a>
+		<a href="./Redirect.html" class="btn-large waves-effect waves-light  purple accent-3 contactButtons"><i class="fa fa-envelope" aria-hidden="true" ></i>Mail</a>
 		</div>
 	</div>
 </div>
