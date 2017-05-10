@@ -420,7 +420,7 @@ a:hover {
 		width: 230px;
 	}
 }
-/*********** PhotoWalk Section ***********/
+/*********** Workshop Section ***********/
 #workshops{
 	position: relative;
 }
@@ -464,7 +464,7 @@ a:hover {
 	#workshopsPic1{
 		position: relative;
 		display: inline-block;
-		left: 0;
+		left: 25px;
 	}
 	#workshopsPic2{
 		display: none;
@@ -602,6 +602,28 @@ a:hover {
 	.smallFont{
 		font-size: 14px!important;
 	}
+}
+/**************************
+* Gallery Page Styles
+**************************/
+#gallery{height: 800px!important;}
+@media all and (max-width: 560px){#gallery{height: 750px!important;}}
+@media all and (max-width: 500px){#gallery{height: 650px!important;}}
+.galleryHeader{
+	text-align: center;
+	font-size: 50px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	color: #fff;
+	font: weight: 600;
+	width: 100%;
+	border-bottom: 10px solid;
+	border-image:   linear-gradient(to right,green 20px, yellow 20px, yellow 40px, red 40px, red 60px, teal 60px, teal 80px) 5;
+	padding: 10px;
+	font-family: 'Dosis', sans-serif;
+}
+#albumHeader{
+	border-image:   linear-gradient(to left,green 20px, yellow 20px, yellow 40px, red 40px, red 60px, teal 60px, teal 80px) 5;
 }
 /**************************
 * Testing Page Styles

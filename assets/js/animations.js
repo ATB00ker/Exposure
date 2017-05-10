@@ -210,7 +210,8 @@ $("#detectBottomLeft").mouseenter(function(){
 		KUTE.to(redBorder,{left: 0, top: 50}, {duration:2500, easing: 'easingCubicOut'}).start();
 });
 $("#internalCmpt").mouseleave(function(){
-		KUTE.to(redBorder,{left: 40, top: 10}, {duration:100, easing: 'easeOutQuad', delay: 2500}).start();
+		KUTE.to(redBorder,{left: 40, top: 10}, {duration:50, easing: 'easeOutQuad', delay: 2500}).start();
+		KUTE.fromTo(redBorder,{opacity: 0},{opacity:1}, {duration:100, easing: 'easeOutQuad', delay: 2500}).start();
 		borderFlag = false;
 });
 /**************************

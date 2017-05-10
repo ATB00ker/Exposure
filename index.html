@@ -26,7 +26,7 @@
 	<script src="https://use.fontawesome.com/8fda296a12.js"></script>
 
     <!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Lobster+Two|Baloo" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster+Two|Baloo|Dosis:700" rel="stylesheet">
 	
     <!-- Materialize Styles-->
 	<link href="assets/css/materialize.min.css" rel="stylesheet" />
@@ -34,17 +34,14 @@
 	<!-- Shake Styles -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.1/csshake-slow.min.css" integrity="sha256-CnjVPwSgcgQhdo5bgWVwV7f2sifHZxjTkYRV9+xDAQk=" crossorigin="anonymous" />
 	
+	<!-- Modernizer Custom Styles -->
+	<script src="assets/js/modernizr.min.js"></script>
+	
+	<!-- Gallery Styles -->
+	<link href="assets/css/gallery.css" rel="stylesheet" />
+	
 	<!-- Custom Styles -->
 	<link href="assets/css/main.css" rel="stylesheet" />
-    <!--link href="assets/css/animations.css" rel="stylesheet" /-->
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 <body>
 <!-- Header Section -->
@@ -94,7 +91,7 @@
 			<div class= "col-sm-7">
 				<div id="pic5">
 						<div id="eventCompetitionDescription" class="aboutCommonDescription">Event Competition<p>This is your opertunity to Outshine the other photographers.</p></div>
-					<img src="./assets/images/about/eventCompetition.jpg">
+					<img src="./assets/images/about/EventCompetition.jpg">
 				</div>
 			</div>
 		</div>
@@ -103,7 +100,7 @@
 		<div class="aboutCommon" id="photowalk">
 		<div class="col-xs-12">
 			<div class="col-xs-4" id="photowalkPic1"><img src="./assets/images/about/Walk1.jpg"></div>
-			<div class="col-xs-4" id="photowalkPic2"><img src="./assets/images/about/Walk2.jpg"></div>
+			<div class="col-xs-4 text-center" id="photowalkPic2"><img src="./assets/images/about/Walk2.jpg"></div>
 			<div class="col-xs-4" id="photowalkPic3"><img src="./assets/images/about/Walk3.jpg"></div>
 		</div>
 			<div class="aboutCommonDescription" id="photowalkDescription">Photowalk<p>Participate in bi-weekly photowalks to hone your skills.</p></div>
@@ -142,8 +139,33 @@
 	</div>
 </div>
 </section>
-<section id="panic1">
+<section id="gallery" class="dg-container parallax-container">	
+	<div class="parallax"><img src="./assets/images/Gallery/gallerybg.jpg"></div>
+	<div id="dg-container" class="container">
+		<div class="galleryHeader">Golden Collection</div>
+			<div class="dg-wrapper">
+				<a href="#"><img src="assets/images/Gallery/1.jpg" alt="image01"><div>http://www.colazionedamichy.it/</div></a>
+				<a href="#"><img src="assets/images/Gallery/2.jpg" alt="image02"><div>http://www.percivalclo.com/</div></a>
+				<a href="#"><img src="assets/images/Gallery/3.jpg" alt="image03"><div>http://www.wanda.net/fr</div></a>
+				<a href="#"><img src="assets/images/Gallery/4.jpg" alt="image04"><div>http://lifeingreenville.com/</div></a>
+				<a href="#"><img src="assets/images/Gallery/5.jpg" alt="image05"><div>http://circlemeetups.com/</div></a>
+				<a href="#"><img src="assets/images/Gallery/6.jpg" alt="image06"><div>http://www.castirondesign.com/</div></a>
+				<a href="#"><img src="assets/images/Gallery/7.jpg" alt="image07"><div>http://www.foundrycollective.com/</div></a>
+				<a href="#"><img src="assets/images/Gallery/8.jpg" alt="image08"><div>http://www.mathiassterner.com/home</div></a>
+				<a href="#"><img src="assets/images/Gallery/9.jpg" alt="image09"><div>http://learnlakenona.com/</div></a>
+			</div>
+			<div id="dg-dynamicPosition"></div>
+			<nav>	
+				<span class="dg-prev">&lt;</span>
+				<span class="dg-next">&gt;</span>
+			</nav>
+	</div>
+	<div class="container">
+	<div id="albumHeader" class="galleryHeader">Album Collection</div>
+	</div>
 </section>
+<div id="panic1">
+</div>
 <section id="panic2">
 </section>
 	<!-- jQuery -->	
@@ -164,5 +186,6 @@
 	<!-- Functionality Scripts -->
 	<script src="assets/js/functions.js"></script>
 	<script src="assets/js/animations.js"></script>
+	<script src="assets/js/jquery.gallery.js"></script>
 </body>
 </html>

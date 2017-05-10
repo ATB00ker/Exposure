@@ -22,8 +22,8 @@ $("#photowalkPic2").css("height",$("#photowalkPic1 img").height());
 * Navigation Bar Item List 
 **************************/
 	if ($(window).width() < 624){
-	html='<li><a href="#about" class="mobBtn" data-toggle="collapse" data-target="#main-menu">About</a></li><li><a href="#events" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Events</a></li><li><a href="#gallery" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Gallery</a></li><li><a href="#events" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Events</a></li>';
-	}else{html='<li><a href="#about">About</a></li><li><a href="#events">Events</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#events">Events</a></li>';}
+	html='<li><a href="#about" class="mobBtn" data-toggle="collapse" data-target="#main-menu">About</a></li><li><a href="#events" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Events</a></li><li><a href="#gallery" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Gallery</a></li><li><a href="#contact" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Contact</a></li>';
+	}else{html='<li><a href="#about">About</a></li><li><a href="#events">Events</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>';}
 $("#NavigationList").append(html);
 /**************************
 * Page Load Functions
@@ -75,6 +75,19 @@ $(window).one('touchstart mousemove click',function(e){
         isTouchDevice = 'yes';
 });
 /**************************
+* Gallery
+**************************/
+// ----Initiate Golden Gallery function---- //
+$(function() {
+	$('#dg-container').gallery();
+});
+$.ajax({
+	url: 'https://graph.facebook.com/exposureamity/albums?fields=cover_photo,name&access_token=296257484143696%7C5fc04aadcc6fc9dd97a8d6f476148e81',
+	jsonp: 'callback',
+	dataType: 'jsonp',
+	success: function( response ) { console.log( response );}
+});
+/**************************
 * Scroll Reveal
 **************************/
 window.sr = ScrollReveal({ reset: true });
@@ -88,3 +101,7 @@ else
 	sr.reveal('#workshops', {distance: '200px', origin: 'bottom',viewOffset: {top: -1000,bottom: 200}, scale: 1});
 sr.reveal('#internalCmpt', {distance: '200px', origin: 'left'});
 sr.reveal('.contactButtons', { duration: 1000 }, 50);
+sr.reveal('.galleryHeader', { duration: 1000 });
+sr.reveal('.dg-wrapper', { duration: 1000, viewOffset: {top: -200}});
+sr.reveal('.dg-next', { duration: 1000, viewOffset: {top: 200, bottom: -400}});
+sr.reveal('.dg-prev', { duration: 1000, viewOffset: {top: 200, bottom: -400}});
