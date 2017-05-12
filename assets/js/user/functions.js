@@ -109,7 +109,6 @@ $(document).on("loadComplete", function(){
 			900:{items:4},
 			1000:{items:4.5},
 			1200:{items:5}
-			1400:{items:6}
 		}
 	});
 });
