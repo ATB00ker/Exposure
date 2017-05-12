@@ -101,3 +101,7 @@
 	background-position: top right;
 	margin-left: 5px;
 }
+#dg-dynamicPosition{
+	position: relative;
+    z-index:10;
+}

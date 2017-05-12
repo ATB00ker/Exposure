@@ -25,6 +25,9 @@ a:hover {
     color: #fff;
 	text-decoration: none;
 }
+#gallery .container-fluid{
+	margin: 0 10%;
+}
 /**************************
 * Header Styles 
 **************************/
@@ -170,6 +173,7 @@ a:hover {
 #about{
 	background-color:#fdfcf9;
 	height: 2900px!important;
+	box-shadow: inset 0px 1px 3px 4px #000;
 }
 @media all and (max-width:1150px){
 	#about{
@@ -606,9 +610,7 @@ a:hover {
 /**************************
 * Gallery Page Styles
 **************************/
-#gallery{height: 800px!important;}
-@media all and (max-width: 560px){#gallery{height: 750px!important;}}
-@media all and (max-width: 500px){#gallery{height: 650px!important;}}
+#gallery{height: auto!important;}
 .galleryHeader{
 	text-align: center;
 	font-size: 50px;
@@ -624,6 +626,35 @@ a:hover {
 }
 #albumHeader{
 	border-image:   linear-gradient(to left,green 20px, yellow 20px, yellow 40px, red 40px, red 60px, teal 60px, teal 80px) 5;
+}
+/** Picture Box**/
+.picsBox{
+	background:#F2F1EF;
+	box-sizing:border-box;
+	color:#000;
+	height: 200px;
+	box-shadow: 0px 0px 5px #000;
+}
+.picsText{
+	height: 40px;
+	color: #000;
+	width: 100%;
+	line-height: 40px;
+	overflow: hidden;
+	padding-left: 2px;
+	font-family: 'Bree Serif', serif;
+	font-size: 15px;
+}
+.coverpics{
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+.coverpics img{
+	width: 215px;
+	height: 160px;
+}
+#facebookCollection{
+	margin-bottom: 30px;
 }
 /**************************
 * Testing Page Styles

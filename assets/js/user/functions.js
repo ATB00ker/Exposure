@@ -59,10 +59,8 @@ var thisTop = $(this).offset().top - $(window).scrollTop();
 **************************/
 (function($){
   $(function(){
-
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
-
   });
 })(jQuery);
 /**************************
@@ -75,18 +73,113 @@ $(window).one('touchstart mousemove click',function(e){
         isTouchDevice = 'yes';
 });
 /**************************
-* Gallery
+* Gallery Section
 **************************/
-// ----Initiate Golden Gallery function---- //
-$(function() {
-	$('#dg-container').gallery();
-});
+var facebook = [];
+// ----Fetch Photo from Facebook---- //
 $.ajax({
-	url: 'https://graph.facebook.com/exposureamity/albums?fields=cover_photo,name&access_token=296257484143696%7C5fc04aadcc6fc9dd97a8d6f476148e81',
+	url: 'https://graph.facebook.com/exposureamity/albums?fields=picture.type(album),name&access_token=296257484143696%7C5fc04aadcc6fc9dd97a8d6f476148e81',
 	jsonp: 'callback',
 	dataType: 'jsonp',
-	success: function( response ) { console.log( response );}
+	success: function( response ) {
+		facebook = response;
+		$(document).trigger("loadComplete");
+	}
 });
+$(document).on("loadComplete", function(){
+	dataIntegration();
+// ----Initiate Golden Gallery function---- //
+	$('#dg-container').gallery();
+// ----Initiate Albums---- //
+	$(".owl-carousel").owlCarousel({
+		loop:true,
+		margin: 20,
+		autoplay:true,
+		autoplayTimeout:3000,
+		autoplayHoverPause:true,
+		responsive:{
+			0:{items:1},
+			320:{items:1.5},
+			400:{items:1.7},
+			450:{items:2},
+			530:{items:2.4},
+			600:{items:2.7},
+			700:{items:3},
+			800:{items:3.5},
+			900:{items:4},
+			1000:{items:4.5},
+			1200:{items:5}
+			1400:{items:6}
+		}
+	});
+});
+/**************************
+* Detect Swipe
+**************************/
+function swipedetect(el, callback){
+    var touchsurface = el,
+    swipedir,
+    startX,
+    startY,
+    distX,
+    distY,
+    threshold = 100, //required min distance traveled to be considered swipe
+    restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+    allowedTime = 300, // maximum time allowed to travel that distance
+    elapsedTime,
+    startTime,
+    handleswipe = callback || function(swipedir){};
+  
+    touchsurface.addEventListener('touchstart', function(e){
+        var touchobj = e.changedTouches[0];
+        swipedir = 'none';
+        dist = 0;
+        startX = touchobj.pageX;
+        startY = touchobj.pageY;
+        startTime = new Date().getTime(); // record time when finger first makes contact with surface
+    }, false)
+    touchsurface.addEventListener('touchend', function(e){
+        var touchobj = e.changedTouches[0];
+        distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
+        distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
+        elapsedTime = new Date().getTime() - startTime; // get time elapsed
+        if (elapsedTime <= allowedTime){ // first condition for awipe met
+            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                swipedir = (distX < 0)? 'left' : 'right'; // if dist traveled is negative, it indicates left swipe
+            }
+            else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                swipedir = (distY < 0)? 'up' : 'down'; // if dist traveled is negative, it indicates up swipe
+            }
+        }
+        handleswipe(swipedir);
+        e.preventDefault();
+    }, false)
+}
+// ----Implimenting the swipe check---- //
+var el = document.getElementById('dg-dynamicPosition')
+swipedetect(el, function(swipedir){
+    if (swipedir =='right')
+        $('.dg-prev').trigger('click');
+    else if (swipedir =='left')
+        $('.dg-next').trigger('click');
+})
+/**************************
+* Data Integration
+**************************/
+var facebookRemove = [];
+var goldenCollection = [];
+var goldenCollectionContainer = $('.dg-wrapper');
+var facebookCollectionContainer = $('#facebookCollection');
+function dataIntegration(){
+	for (var x in goldenCollection){
+		var html = '<a href="#"><img src="'+goldenCollection[x].img+'"><div>'+goldenCollection[x].text+'</div></a>';
+		goldenCollectionContainer.append(html);
+	}
+	for (var x in facebook.data){
+		html = '<div class="picsBox"><a href="https://facebook.com/'+facebook.data[x].id+'"><div class="coverpics"><img src="'+facebook.data[x].picture.data.url+'"></div><div class="picsText">'+facebook.data[x].name+'</div></a></div>';
+		facebookCollectionContainer.append(html);
+	}
+}
 /**************************
 * Scroll Reveal
 **************************/

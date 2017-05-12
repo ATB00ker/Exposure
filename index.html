@@ -14,7 +14,6 @@
     <meta name="theme-color" content="#000">
 
     <title>Exposure</title>
-
      <!-- Site favicon -->
      <link href="assets/images/navLogo.png" rel="shortcut icon">
      <link href="assets/images/navLogo.png" rel="apple-touch-icon">
@@ -26,7 +25,7 @@
 	<script src="https://use.fontawesome.com/8fda296a12.js"></script>
 
     <!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Lobster+Two|Baloo|Dosis:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster+Two|Baloo|Dosis:700|Bree+Serif" rel="stylesheet">
 	
     <!-- Materialize Styles-->
 	<link href="assets/css/materialize.min.css" rel="stylesheet" />
@@ -34,14 +33,19 @@
 	<!-- Shake Styles -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.1/csshake-slow.min.css" integrity="sha256-CnjVPwSgcgQhdo5bgWVwV7f2sifHZxjTkYRV9+xDAQk=" crossorigin="anonymous" />
 	
-	<!-- Modernizer Custom Styles -->
-	<script src="assets/js/modernizr.min.js"></script>
-	
 	<!-- Gallery Styles -->
 	<link href="assets/css/gallery.css" rel="stylesheet" />
 	
 	<!-- Custom Styles -->
-	<link href="assets/css/main.css" rel="stylesheet" />
+	<link href="assets/css/user/main.css" rel="stylesheet" />
+	
+	
+	
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+	
+	
+	
 </head>
 <body>
 <!-- Header Section -->
@@ -64,8 +68,8 @@
   </header><!-- /#masthead -->
 <section class="parallax-container">
 	<div class="parallax"><img src="./assets/images/homeBackground.jpg"></div>
-	<div id="logo"><img src="./assets/images/logo.jpg">
-	<div id="logoExpand"><img src="./assets/images/logoExpand.jpg"></div></div>
+	<div id="logo"><img src="./assets/images/Logo.jpg">
+	<div id="logoExpand"><img src="./assets/images/LogoExpand.jpg"></div></div>
 </section>
 <section class="parallax-container" id="about">
 <div class="container-fluid">
@@ -144,24 +148,16 @@
 	<div id="dg-container" class="container">
 		<div class="galleryHeader">Golden Collection</div>
 			<div class="dg-wrapper">
-				<a href="#"><img src="assets/images/Gallery/1.jpg" alt="image01"><div>http://www.colazionedamichy.it/</div></a>
-				<a href="#"><img src="assets/images/Gallery/2.jpg" alt="image02"><div>http://www.percivalclo.com/</div></a>
-				<a href="#"><img src="assets/images/Gallery/3.jpg" alt="image03"><div>http://www.wanda.net/fr</div></a>
-				<a href="#"><img src="assets/images/Gallery/4.jpg" alt="image04"><div>http://lifeingreenville.com/</div></a>
-				<a href="#"><img src="assets/images/Gallery/5.jpg" alt="image05"><div>http://circlemeetups.com/</div></a>
-				<a href="#"><img src="assets/images/Gallery/6.jpg" alt="image06"><div>http://www.castirondesign.com/</div></a>
-				<a href="#"><img src="assets/images/Gallery/7.jpg" alt="image07"><div>http://www.foundrycollective.com/</div></a>
-				<a href="#"><img src="assets/images/Gallery/8.jpg" alt="image08"><div>http://www.mathiassterner.com/home</div></a>
-				<a href="#"><img src="assets/images/Gallery/9.jpg" alt="image09"><div>http://learnlakenona.com/</div></a>
 			</div>
 			<div id="dg-dynamicPosition"></div>
 			<nav>	
 				<span class="dg-prev">&lt;</span>
 				<span class="dg-next">&gt;</span>
 			</nav>
+		<div id="albumHeader" class="galleryHeader">Album Collection</div>
 	</div>
-	<div class="container">
-	<div id="albumHeader" class="galleryHeader">Album Collection</div>
+	<div class="container-fluid">
+		<div id="facebookCollection" class="owl-carousel"></div>
 	</div>
 </section>
 <div id="panic1">
@@ -180,12 +176,18 @@
 	<!-- Materialize JavaScript -->
 	<script src="assets/js/materialize.min.js"></script>
 	
+	<!-- Modernizer Custom JavaScript -->	
+	<script src="assets/js/modernizr.min.js"></script>
+	
 	<!-- ScrollReveal JavaScript -->
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+	<script src="assets/js/owl.carousel.min.js" defer></script>
 	
 	<!-- Functionality Scripts -->
-	<script src="assets/js/functions.js"></script>
-	<script src="assets/js/animations.js"></script>
 	<script src="assets/js/jquery.gallery.js"></script>
+	<script src="assets/js/user/animations.js "></script>
+	<script src="assets/js/user/functions.js"></script>
+	<script src="assets/js/user/data.js"></script>
 </body>
 </html>
