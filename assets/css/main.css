@@ -25,9 +25,6 @@ a:hover {
     color: #fff;
 	text-decoration: none;
 }
-#gallery .container-fluid{
-	margin: 0 2%;
-}
 /**************************
 * Header Styles 
 **************************/
@@ -173,12 +170,35 @@ a:hover {
 #about{
 	background-color:#fdfcf9;
 	height: 2900px!important;
-	box-shadow: inset 0px -3px 7px -2px rgba(0,0,0,0.46);
-	height: auto!important;
 }
-@media all and (max-width:625px){
+@media all and (max-width:1150px){
 	#about{
-		padding-bottom: 380px;		
+		height: 2800px!important;
+	}
+}
+@media all and (max-width:768px){
+	#about{
+		height: 2600px!important;
+	}
+}
+@media all and (max-width:622px){
+	#about{
+		height: 3360px!important;
+	}
+}
+@media all and (min-width:395px) and (max-width:400px){
+	#about{
+		height: 2000px!important;
+	}
+}
+@media all and (width:395px){
+	#about{
+		height: 2900px!important;
+	}
+}
+@media all and (max-width:394px){
+	#about{
+		height: 2950px!important;
 	}
 }
 @media all and (max-width:499px){
@@ -336,6 +356,8 @@ a:hover {
 #eventCompetitionDescription p{	padding-right: 5px;}
 
 /*********** PhotoWalk Section ***********/
+#photowalk{
+}
 #photowalk img{
 	width: 100%;
 }
@@ -354,15 +376,8 @@ a:hover {
 		height: 420px!important;
 		width: 325px;
 	}
-}
-@media all and (max-width: 350px){
-	#photowalkPic2{
-		left:-20px;
-	}
-}
-@media all and (max-width: 330px){
-	#photowalkPic2{
-		left:-30px;
+	#photowalkDescription{
+		position: absolute!important;
 	}
 }
 #photowalkPic1{
@@ -388,10 +403,6 @@ a:hover {
 #photowalkPic3 img{
 	box-shadow: 2px -1px 5px #888888;
 }
-#photowalkDescription{
-	margin-top: -20px;
-	margin-bottom: 20px;
-}
 @media all and (min-width: 626px){
 	#photowalkDescription{
 		width: 100%;
@@ -401,62 +412,33 @@ a:hover {
 		font-size: 26px;
 	}
 	#photowalkDescription p{
-		font-size: 20px;		
+		font-size: 20px;	
+	}	
+}
+@media all and (max-width: 395px){
+	#photowalkPic2 img{
+		width: 230px;
 	}
 }
 /*********** Workshop Section ***********/
 #workshops{
-	margin-top: 20px;
-	height: 400px;
-	
+	position: relative;
 }
 #workshopsPic1{
-	transform:skew(5deg,5deg);
-	text-align: right;
+	position: absolute;
+	top:0;
+	right: 0;
+	left: -300px;
+	margin: auto;
+	transform: skew(5deg,5deg);
+	margin-top: 50px;
 }
 #workshopsPic2{
-	top: 50px;
-	transform:translateX(-20%) skew(-5deg,-5deg);
-	opacity: 0.8;
-	text-align: left;
-}
-@media all and (max-width: 1300px){#workshopsPic2{transform:translateX(-30%) skew(-5deg,-5deg);}}
-@media all and (max-width: 1100px){#workshopsPic2{transform:translateX(-40%) skew(-5deg,-5deg);}}
-@media all and (max-width: 875px){#workshopsPic2{transform:scale(0.9) translateX(-45%) skew(-5deg,-5deg);}}
-@media all and (max-width: 850px){#workshopsPic2{transform:scale(0.8) translateX(-50%) skew(-5deg,-5deg);}}
-@media all and (max-width: 720px){#workshopsPic2{transform:scale(0.7) translateX(-65%) skew(-5deg,-5deg);}}
-
-@media all and (max-width: 625px){
-	#workshopsPic1{
-		transform: none;
-	}
-	#workshopsPic1 img{	
-		position: absolute;
-		right: 0;
-		left: 0;
-		margin: auto;
-	}
-	#workshopsPic2{display: none;}	
-}
-@media all and (max-width: 380px){
-	#workshopsPic1 img{
-		left:-10px;
-	}
-}
-@media all and (max-width: 365px){
-	#workshopsPic1 img{
-		left:-20px;
-	}
-}
-@media all and (max-width: 350px){
-	#workshopsPic1 img{
-		left:-25px;
-	}
-}
-@media all and (max-width: 340px){
-	#workshopsPic1 img{
-		left:-35px;
-	}
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	transform: translateX(-30%) skew(-5deg,-5deg);
+	opacity: 0.9;
 }
 #workshopsPic1 img{
 	width: 325px;
@@ -464,24 +446,36 @@ a:hover {
 #workshopsPic2 img{
 	height: 250px;
 }
-#workshopDescription{
-	border-left: 0;
-	border-right: 2px solid;
-	text-align: right;
-	padding-right: 5px;
-	margin: auto;
-	margin-bottom: 20px;
-}
-@media all and (min-width: 626px){
-	#workshopDescription{
-		width: 100%;
-		border: 0;
-		padding: 0;
-		text-align: center;
-		font-size: 26px;
+@media all and (max-width: 775px){
+	#workshopsPic1{
+		left: -230px;
 	}
-	#workshopDescription p{
-		font-size: 20px;		
+	#workshopsPic1 img{
+		width: 275px;
+	}
+	#workshopsPic2 img{
+		height: 200px;
+	}	
+}
+@media all and (max-width: 625px){
+	#workshops{
+		text-align: center;	
+	}
+	#workshopsPic1{
+		position: relative;
+		display: inline-block;
+		left: 25px;
+	}
+	#workshopsPic2{
+		display: none;
+	}
+	#workshopsPic1 img{
+		width: 325px;
+	}
+}
+@media all and (max-width: 395px){
+	#workshopsPic1 img{
+		width: 230px;
 	}
 }
 /*********** Competition Styles ***********/
@@ -489,31 +483,17 @@ a:hover {
 	position: relative;
 	margin-top: 650px;
 	transform: rotate(-2deg);
-	margin-top: 20px;
-	margin-bottom: 20px;
+}
+@media all and (max-width: 400px){
+	#internalCmpt{
+		position: relative;
+		margin-top: 650px;
+		transform: rotate(-2deg);
+		left: -35px;
+	}
 }
 #internalCmpt img{
 	width: 325px;
-}
-@media all and (max-width: 380px){
-	#internalCmpt{
-		left:-25px;
-	}
-}
-@media all and (max-width: 365px){
-	#internalCmpt{
-		left:-35px;
-	}
-}
-@media all and (max-width: 350px){
-	#internalCmpt{
-		left:-40px;
-	}
-}
-@media all and (max-width: 340px){
-	#internalCmpt{
-		left:-45px;
-	}
 }
 #redBorder{
 	position: absolute;
@@ -523,6 +503,11 @@ a:hover {
 	height: 400px;
 	border: 2px solid red;
 	transform: rotate(2deg);
+}
+@media all and (max-width: 775px){
+	#internalCmpt{
+		margin-top: 550px;
+	}	
 }
 #detectTopLeft{
 	position: absolute;
@@ -575,8 +560,14 @@ a:hover {
 /*********** Contact Us Styles ***********/
 #contactUs{
 	position: relative;
+	margin-top: 650px;
 	text-align: center;
 	height: 320px;
+}
+@media all and (max-width: 775px){
+	#contactUs{
+		margin-top: 550px;
+	}	
 }
 .contactButtons{
 	font-size: 24px;
@@ -598,32 +589,26 @@ a:hover {
 @media all and (max-width: 850px){
 	.smallFont{
 		font-size: 17px!important;
-	}
-	.contactButtons{
-		font-size: 24px;
-	}
-	.contactButtons i{
-		font-size: 22px;
-		margin-right: 10px;
-	}
+	}	
 }
 @media all and (min-width: 622px) and (max-width: 700px){
 	.contactButtons{
-		font-size: 18px;
+		font-size: 20px;
 	}
 	.contactButtons i{
 		font-size: 24px;
 		margin-right: 10px;
 	}
 	.smallFont{
-		font-size: 12px!important;
-		margin-right: 0;
+		font-size: 14px!important;
 	}
 }
 /**************************
 * Gallery Page Styles
 **************************/
-#gallery{height: auto!important;}
+#gallery{height: 800px!important;}
+@media all and (max-width: 560px){#gallery{height: 750px!important;}}
+@media all and (max-width: 500px){#gallery{height: 650px!important;}}
 .galleryHeader{
 	text-align: center;
 	font-size: 50px;
@@ -639,36 +624,6 @@ a:hover {
 }
 #albumHeader{
 	border-image:   linear-gradient(to left,green 20px, yellow 20px, yellow 40px, red 40px, red 60px, teal 60px, teal 80px) 5;
-}
-/** Picture Box**/
-.picsBox{
-	background:#F2F1EF;
-	box-sizing:border-box;
-	color:#000;
-	height: 200px;
-	width: 245px;
-	box-shadow: 3px 4px 19px -6px rgba(0,0,0,0.75);
-}
-.picsText{
-	height: 40px;
-	color: #000;
-	width: 100%;
-	line-height: 40px;
-	overflow: hidden;
-	padding-left: 2px;
-	font-family: 'Bree Serif', serif;
-	font-size: 15px;
-}
-.coverpics{
-	overflow-x:hidden;
-	overflow-y:hidden;
-}
-.coverpics img{
-	width: 245px;
-	height: 160px;
-}
-#facebookCollection{
-	margin-bottom: 30px;
 }
 /**************************
 * Testing Page Styles
