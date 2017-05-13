@@ -13,4 +13,5 @@ goldenCollection[7] = {img:"assets/images/Gallery/8.jpg", text:"http://www.colaz
 * Facebook Albums NOT to 
 be displayed on site
 **************************/
-facebookRemove[0] = {link:""};
+facebookRemove[0] = {link:"https://www.facebook.com/pg/exposureamity/photos/?tab=album&album_id=290504464644065"}; //To hide Cover Photos Album.
+facebookRemove[1] = {link:"https://www.facebook.com/pg/exposureamity/photos/?tab=album&album_id=290503741310804"}; //To hide Profile Picture Album.

@@ -4,18 +4,14 @@
 setHeight();
 function setHeight(){
 $(".parallax-container").css("height",$(window).height());
-$("#Boo").css("width",$(window).width());
 $("#eventCompetition").css("height",$("#pic5 img").height()*0.4);
+$("#photowalk").css("height",$("#photowalkPic2 img").height());
 $("#photowalkPic1").css("height",$("#photowalkPic1 img").height());
 $("#photowalkPic3").css("height",$("#photowalkPic1 img").height());
 $("#photowalkPic2").css("height",$("#photowalkPic1 img").height());
 	if ($(window).width() < 626){
 		$("#eventCompetitionDescription").css("top",$("#pic5 img").height()+5);
-		$("#photowalkPic2").css("top",$("#pic5 img").height());
-		$("#photowalkDescription").css("top",($("#pic5 img").height() + $("#photowalkPic2 img").height()));
-		$("#workshops").css("top",($("#pic5 img").height() + $("#photowalkPic2 img").height()+100));
-		$("#internalCmpt").css("marginTop",$("#photowalkPic2 img").height()*1.9);
-		$("#contactUs").css("marginTop",$("#photowalkPic2 img").height()*2 + $("#internalCmpt").height());
+		$("#photowalk").css("marginTop",$("#pic5 img").height()+ 20);
 	}
 }
 /**************************
@@ -28,7 +24,7 @@ $("#NavigationList").append(html);
 /**************************
 * Page Load Functions
 **************************/
-//$("html, body").animate({ scrollTop: 0.01});//Scroll Screen to top at reload
+$("html, body").animate({ scrollTop: 0.01});//Scroll Screen to top at reload
 var reloadFlag = $(window).width();
 $(window).resize(function() {
 	setHeight();
@@ -92,24 +88,13 @@ $(document).on("loadComplete", function(){
 	$('#dg-container').gallery();
 // ----Initiate Albums---- //
 	$(".owl-carousel").owlCarousel({
+		autoWidth: true,
+		center: true,
 		loop:true,
 		margin: 20,
 		autoplay:true,
 		autoplayTimeout:3000,
 		autoplayHoverPause:true,
-		responsive:{
-			0:{items:1},
-			320:{items:1.5},
-			400:{items:1.7},
-			450:{items:2},
-			530:{items:2.4},
-			600:{items:2.7},
-			700:{items:3},
-			800:{items:3.5},
-			900:{items:4},
-			1000:{items:4.5},
-			1200:{items:5}
-		}
 	});
 });
 /**************************
@@ -175,6 +160,13 @@ function dataIntegration(){
 		goldenCollectionContainer.append(html);
 	}
 	for (var x in facebook.data){
+		for(var z in facebookRemove){
+				if('https://www.facebook.com/pg/exposureamity/photos/?tab=album&album_id='+facebook.data[x].id==facebookRemove[z].link){
+					facebook.data.splice(x, 1);
+			}
+		}
+	}
+	for (var x in facebook.data){
 		html = '<div class="picsBox"><a href="https://facebook.com/'+facebook.data[x].id+'"><div class="coverpics"><img src="'+facebook.data[x].picture.data.url+'"></div><div class="picsText">'+facebook.data[x].name+'</div></a></div>';
 		facebookCollectionContainer.append(html);
 	}
@@ -187,8 +179,9 @@ sr.reveal('#aboutTitle');
 sr.reveal('#eventCoverage', {distance: '200px', origin: 'left'});
 sr.reveal('#eventCompetition', {distance: '200px', origin: 'right', viewOffset: {bottom: -150}});
 sr.reveal('#photowalkPic2', {distance: '200px', origin: 'bottom',viewOffset: {top: -200}});
+sr.reveal('#photowalkDescription', {duration: 900, distance: '200px', origin: 'bottom',viewOffset: {top: -200}});
 if($(window).width() > 450)
-	sr.reveal('#workshops', {distance: '200px', origin: 'bottom',viewOffset: {top: -1000,bottom: 400}, scale: 1});
+	sr.reveal('#workshops', {distance: '200px', origin: 'bottom',viewOffset: {top: -1000,bottom: 300}, scale: 1});
 else
 	sr.reveal('#workshops', {distance: '200px', origin: 'bottom',viewOffset: {top: -1000,bottom: 200}, scale: 1});
 sr.reveal('#internalCmpt', {distance: '200px', origin: 'left'});
@@ -197,3 +190,4 @@ sr.reveal('.galleryHeader', { duration: 1000 });
 sr.reveal('.dg-wrapper', { duration: 1000, viewOffset: {top: -200}});
 sr.reveal('.dg-next', { duration: 1000, viewOffset: {top: 200, bottom: -400}});
 sr.reveal('.dg-prev', { duration: 1000, viewOffset: {top: 200, bottom: -400}});
+sr.reveal('.container-fluid', { duration: 500 });

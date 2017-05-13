@@ -36,16 +36,11 @@
 	<!-- Gallery Styles -->
 	<link href="assets/css/gallery.css" rel="stylesheet" />
 	
+	<!-- Owl Styles -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	
 	<!-- Custom Styles -->
 	<link href="assets/css/user/main.css" rel="stylesheet" />
-	
-	
-	
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-	
-	
-	
 </head>
 <body>
 <!-- Header Section -->
@@ -100,24 +95,26 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="aboutCommon" id="photowalk">
-		<div class="col-xs-12">
-			<div class="col-xs-4" id="photowalkPic1"><img src="./assets/images/about/Walk1.jpg"></div>
-			<div class="col-xs-4 text-center" id="photowalkPic2"><img src="./assets/images/about/Walk2.jpg"></div>
-			<div class="col-xs-4" id="photowalkPic3"><img src="./assets/images/about/Walk3.jpg"></div>
-		</div>
-			<div class="aboutCommonDescription" id="photowalkDescription">Photowalk<p>Participate in bi-weekly photowalks to hone your skills.</p></div>
-		</div>
-	<div class="row">
+	<div  id="photowalk" class="row">
 		<div class="aboutCommon">
-			<div id="workshops">
-				<div class="col-xs-6" id="workshopsPic1"><img src="./assets/images/about/workshop1.jpg">
-				<div class="aboutCommonDescription">Workshops<p>Attend the informative to learn about getting better clicks and editing.</p></div></div>
-				<div class="col-xs-6" id="workshopsPic2"><img src="./assets/images/about/workshop2.jpg"></div>
+			<div class="col-xs-12">
+				<div class="col-xs-4" id="photowalkPic1"><img src="./assets/images/about/Walk1.jpg"></div>
+				<div class="col-xs-4" id="photowalkPic2"><img src="./assets/images/about/Walk2.jpg"></div>
+				<div class="col-xs-4" id="photowalkPic3"><img src="./assets/images/about/Walk3.jpg"></div>
 			</div>
 		</div>
 	</div>
+	<div class="aboutCommonDescription" id="photowalkDescription">Photowalk<p>Participate in bi-weekly photowalks to hone your skills.</p></div>
+	<div class="row">
+		<div id="workshops" class="aboutCommon">
+			<div class="col-xs-12">
+				<div class="col-sm-6" id="workshopsPic1"><img src="./assets/images/about/workshop1.jpg">
+				</div>
+				<div class="col-sm-6" id="workshopsPic2"><img src="./assets/images/about/workshop2.jpg"></div>
+			</div>
+		</div>
+	</div>
+	<div id="workshopDescription" class="aboutCommonDescription">Workshops<p>Attend the informative to learn about getting better clicks and editing.</p></div>
 	<div class="row">
 	<div  class="col-sm-7">
 		<div id="internalCmpt" class="aboutCommon col-xs-12">
@@ -179,10 +176,11 @@
 	<!-- Modernizer Custom JavaScript -->	
 	<script src="assets/js/modernizr.min.js"></script>
 	
+	<!-- Owl JavaScript -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+	
 	<!-- ScrollReveal JavaScript -->
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
-	<script src="assets/js/owl.carousel.min.js" defer></script>
 	
 	<!-- Functionality Scripts -->
 	<script src="assets/js/jquery.gallery.js"></script>
