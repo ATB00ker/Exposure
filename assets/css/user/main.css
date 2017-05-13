@@ -28,6 +28,19 @@ a:hover {
 #gallery .container-fluid{
 	margin: 0 2%;
 }
+.sectionHeader{
+	text-align: center;
+	font-size: 50px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	color: #fff;
+	font-weight: 600;
+	width: 100%;
+	border-bottom: 10px solid;
+	border-image:   linear-gradient(to right,green 20px, yellow 20px, yellow 40px, red 40px, red 60px, teal 60px, teal 80px) 5;
+	padding: 10px;
+	font-family: 'Dosis', sans-serif;
+}
 /**************************
 * Header Styles 
 **************************/
@@ -175,6 +188,7 @@ a:hover {
 	height: 2900px!important;
 	box-shadow: inset 0px -3px 7px -2px rgba(0,0,0,0.46);
 	height: auto!important;
+	z-index: 1;
 }
 @media all and (max-width:625px){
 	#about{
@@ -336,6 +350,9 @@ a:hover {
 #eventCompetitionDescription p{	padding-right: 5px;}
 
 /*********** PhotoWalk Section ***********/
+#photowalk{
+	margin-top: 30px;
+}
 #photowalk img{
 	width: 100%;
 }
@@ -574,9 +591,11 @@ a:hover {
 }
 /*********** Contact Us Styles ***********/
 #contactUs{
-	position: relative;
+	margin-top: 20px;
+	position: relative!important;
 	text-align: center;
 	height: 320px;
+	z-index: -2;
 }
 .contactButtons{
 	font-size: 24px;
@@ -602,18 +621,10 @@ a:hover {
 	.contactButtons{
 		font-size: 24px;
 	}
-	.contactButtons i{
-		font-size: 22px;
-		margin-right: 10px;
-	}
 }
 @media all and (min-width: 622px) and (max-width: 700px){
 	.contactButtons{
 		font-size: 18px;
-	}
-	.contactButtons i{
-		font-size: 24px;
-		margin-right: 10px;
 	}
 	.smallFont{
 		font-size: 12px!important;
@@ -624,19 +635,6 @@ a:hover {
 * Gallery Page Styles
 **************************/
 #gallery{height: auto!important;}
-.galleryHeader{
-	text-align: center;
-	font-size: 50px;
-	margin-bottom: 25px;
-	margin-top: 25px;
-	color: #fff;
-	font: weight: 600;
-	width: 100%;
-	border-bottom: 10px solid;
-	border-image:   linear-gradient(to right,green 20px, yellow 20px, yellow 40px, red 40px, red 60px, teal 60px, teal 80px) 5;
-	padding: 10px;
-	font-family: 'Dosis', sans-serif;
-}
 #albumHeader{
 	border-image:   linear-gradient(to left,green 20px, yellow 20px, yellow 40px, red 40px, red 60px, teal 60px, teal 80px) 5;
 }
@@ -671,13 +669,73 @@ a:hover {
 	margin-bottom: 30px;
 }
 /**************************
-* Testing Page Styles
+* Team Page Styles
 **************************/
-#panic1{
-	background-color:#234a21;
+#team{
 	height: 1000px;
 }
-#panic2{
-	background-color:#132127;
-	height: 1000px;
+#team .sectionHeader{
+	color: black;
+	border-image: linear-gradient(to right, grey 25%, yellow 25%, yellow 50%,red 50%, red 75%, teal 75%) 5;
+}
+.memberBox{
+	margin-bottom: 20px;
+}
+.memberPic {
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin-bottom: 20px;	
+}
+.memberPic img{
+	height: 200px;
+	width: 200px;	
+}
+.memberName{
+	position: absolute;
+	bottom: 0;
+	background-color: #fff;
+	height: 30px;
+	color: #000;
+	width: 100%;
+	overflow: hidden;
+	font-family: 'Bree Serif', serif;
+	font-size: 20px;
+	color: black;
+	text-align: center;
+	opacity: 0.8;
+}
+.memberDesignation{
+	position: absolute;
+	bottom: -30px;
+	background-color: #fff;
+	height: 30px;
+	color: #000;
+	width: 100%;
+	overflow: hidden;
+	font-family: 'Bree Serif', serif;
+	font-size: 20px;
+	color: black;
+	text-align: center;
+	opacity: 0;	
+}
+.memberBox:hover .memberName{
+    animation-name: nameRise;
+    animation-duration: 0.2s;
+	transition-timing-function:ease-out;
+	bottom: 30px;opacity: 1;
+}
+@keyframes nameRise {
+    from {bottom:0;}
+    to {bottom: 30px;}
+}
+.memberBox:hover .memberDesignation{
+    animation-name: designationRise;
+    animation-duration: 0.2s;
+	transition-timing-function:ease-in;
+	bottom: 0;opacity: 1;
+}
+@keyframes designationRise {
+    from {bottom:-30px;}
+    to {bottom: 0;}
 }

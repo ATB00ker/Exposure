@@ -35,12 +35,11 @@
 	display: block;
 	padding: 41px 0px 0px 1px;
 }
-#dg-dynamicPosition{height: 410px;}
 @media all and (max-width: 560px){
 	.dg-wrapper{width: 381px;}
 	.dg-wrapper a img{width: 400px;}
 	.dg-container{height: 550px!important;}
-	#dg-dynamicPosition{height: 350px;}
+	#dg-dynamicPosition{height: 350px!important;}
 }
 @media all and (max-width: 500px){
 	.dg-wrapper{
@@ -104,4 +103,11 @@
 #dg-dynamicPosition{
 	position: relative;
     z-index:10;
+	height: 380px;
+}
+.dg-container a{
+	transform: translateY(-8px);	
+}
+.dg-container i{
+ transform: translateY(2px);	
 }

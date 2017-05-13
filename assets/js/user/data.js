@@ -15,3 +15,14 @@ be displayed on site
 **************************/
 facebookRemove[0] = {link:"https://www.facebook.com/pg/exposureamity/photos/?tab=album&album_id=290504464644065"}; //To hide Cover Photos Album.
 facebookRemove[1] = {link:"https://www.facebook.com/pg/exposureamity/photos/?tab=album&album_id=290503741310804"}; //To hide Profile Picture Album.
+/**************************
+* Team Members
+**************************/
+team[0] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
+team[1] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
+team[2] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
+team[3] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
+team[4] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
+team[5] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
+team[6] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
+team[7] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};

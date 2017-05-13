@@ -11,20 +11,20 @@ $("#photowalkPic3").css("height",$("#photowalkPic1 img").height());
 $("#photowalkPic2").css("height",$("#photowalkPic1 img").height());
 	if ($(window).width() < 626){
 		$("#eventCompetitionDescription").css("top",$("#pic5 img").height()+5);
-		$("#photowalk").css("marginTop",$("#pic5 img").height()+ 20);
+		$("#photowalk").css("marginTop",$("#pic5 img").height()+ 40);
 	}
 }
 /**************************
 * Navigation Bar Item List 
 **************************/
 	if ($(window).width() < 624){
-	html='<li><a href="#about" class="mobBtn" data-toggle="collapse" data-target="#main-menu">About</a></li><li><a href="#events" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Events</a></li><li><a href="#gallery" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Gallery</a></li><li><a href="#contact" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Contact</a></li>';
-	}else{html='<li><a href="#about">About</a></li><li><a href="#events">Events</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>';}
+	html='<li><a href="#about" class="mobBtn" data-toggle="collapse" data-target="#main-menu">About</a></li><li><a href="#gallery" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Gallery</a></li><li><a href="#team" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Team</a></li><li><a href="#help" class="mobBtn" data-toggle="collapse" data-target="#main-menu">Help</a></li>';
+	}else{html='<li><a href="#about">About</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#team">Team</a></li><li><a href="#help">Help</a></li>';}
 $("#NavigationList").append(html);
 /**************************
 * Page Load Functions
 **************************/
-$("html, body").animate({ scrollTop: 0.01});//Scroll Screen to top at reload
+//$("html, body").animate({ scrollTop: 0.01});//Scroll Screen to top at reload
 var reloadFlag = $(window).width();
 $(window).resize(function() {
 	setHeight();
@@ -148,10 +148,34 @@ swipedetect(el, function(swipedir){
         $('.dg-next').trigger('click');
 })
 /**************************
+* Go full Screen
+**************************/
+function toggleFullScreen() {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {  
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) {  
+      document.documentElement.mozRequestFullScreen();  
+    } else if (document.documentElement.webkitRequestFullScreen) {  
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    }  
+  } else {  
+    if (document.cancelFullScreen) {  
+      document.cancelFullScreen();  
+    } else if (document.mozCancelFullScreen) {  
+      document.mozCancelFullScreen();  
+    } else if (document.webkitCancelFullScreen) {  
+      document.webkitCancelFullScreen();  
+    }  
+  }  
+}
+/**************************
 * Data Integration
 **************************/
 var goldenCollectionContainer = $('.dg-wrapper');
 var facebookCollectionContainer = $('#facebookCollection');
+var teamExposureContainer = $('#teamExposure');
 function dataIntegration(){
 	for (var x in goldenCollection){
 		var html = '<a href="#"><img src="'+goldenCollection[x].img+'"><div>'+goldenCollection[x].text+'</div></a>';
@@ -168,6 +192,10 @@ function dataIntegration(){
 		html = '<div class="picsBox"><a href="https://facebook.com/'+facebook.data[x].id+'"><div class="coverpics"><img src="'+facebook.data[x].picture.data.url+'"></div><div class="picsText">'+facebook.data[x].name+'</div></a></div>';
 		facebookCollectionContainer.append(html);
 	}
+	for (var x in team){
+		html = '<div class="memberBox"><a href="'+team[x].link+'"><div class="memberPic"><img src="'+team[x].photo+'"><div class="memberName">'+team[x].name+'</div><div class="memberDesignation">'+team[x].designation+'</div></div></a></div>';
+		teamExposureContainer.append(html);
+	}
 }
 /**************************
 * Scroll Reveal
@@ -177,15 +205,15 @@ sr.reveal('#aboutTitle');
 sr.reveal('#eventCoverage', {distance: '200px', origin: 'left'});
 sr.reveal('#eventCompetition', {distance: '200px', origin: 'right', viewOffset: {bottom: -150}});
 sr.reveal('#photowalkPic2', {distance: '200px', origin: 'bottom',viewOffset: {top: -200}});
-sr.reveal('#photowalkDescription', {duration: 900, distance: '200px', origin: 'bottom',viewOffset: {top: -200}});
+sr.reveal('#photowalkDescription', {duration: 900, distance: '200px', origin: 'bottom',viewOffset: {top: -200, bottom: -150}});
 if($(window).width() > 450)
 	sr.reveal('#workshops', {distance: '200px', origin: 'bottom',viewOffset: {top: -1000,bottom: 300}, scale: 1});
 else
 	sr.reveal('#workshops', {distance: '200px', origin: 'bottom',viewOffset: {top: -1000,bottom: 200}, scale: 1});
 sr.reveal('#internalCmpt', {distance: '200px', origin: 'left'});
 sr.reveal('.contactButtons', { duration: 1000 }, 50);
-sr.reveal('.galleryHeader', { duration: 1000 });
+sr.reveal('.sectionHeader', { duration: 1000 });
 sr.reveal('.dg-wrapper', { duration: 1000, viewOffset: {top: -200}});
 sr.reveal('.dg-next', { duration: 1000, viewOffset: {top: 200, bottom: -400}});
 sr.reveal('.dg-prev', { duration: 1000, viewOffset: {top: 200, bottom: -400}});
-sr.reveal('.container-fluid', { duration: 500 });
+sr.reveal('#facebookCollection', { duration: 500 });

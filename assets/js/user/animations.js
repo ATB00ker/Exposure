@@ -1,4 +1,9 @@
 /**************************
+* Navigation Bar Hover Sound
+**************************/
+var audio = document.getElementsByTagName("audio")[0];
+$(".navbar-nav>li>a").mouseenter(function(){audio.play();});
+/**************************
 * Definations
 **************************/
 var navContainer = document.querySelector('header .container-fluid'),
@@ -214,8 +219,3 @@ $("#internalCmpt").mouseleave(function(){
 		KUTE.fromTo(redBorder,{opacity: 0},{opacity:1}, {duration:100, easing: 'easeOutQuad', delay: 2500}).start();
 		borderFlag = false;
 });
-/**************************
-* Navigation Bar Hover Sound
-**************************/
-var audio = document.getElementsByTagName("audio")[0];
-$(".navbar-nav>li>a").mouseenter(function(){audio.play();});
