@@ -150,8 +150,6 @@ swipedetect(el, function(swipedir){
 /**************************
 * Data Integration
 **************************/
-var facebookRemove = [];
-var goldenCollection = [];
 var goldenCollectionContainer = $('.dg-wrapper');
 var facebookCollectionContainer = $('#facebookCollection');
 function dataIntegration(){
