@@ -1,12 +1,6 @@
 /**************************
 * General Code
 **************************/
-.absolute-center{
-	position: absolute;
-	margin: auto;
-	left: 0; right: 0;
-	top: 0; bottom: 0;
-}
 a:hover{
 	color: #fff;
 	text-decoration: none;
@@ -25,21 +19,23 @@ a:hover {
     color: #fff;
 	text-decoration: none;
 }
-#gallery .container-fluid{
-	margin: 0 2%;
-}
 .sectionHeader{
 	text-align: center;
 	font-size: 50px;
 	margin-bottom: 25px;
 	margin-top: 25px;
-	color: #fff;
+	color: #FEFEFE;
 	font-weight: 600;
 	width: 100%;
 	border-bottom: 10px solid;
 	border-image:   linear-gradient(to right,green 20px, yellow 20px, yellow 40px, red 40px, red 60px, teal 60px, teal 80px) 5;
 	padding: 10px;
 	font-family: 'Dosis', sans-serif;
+}
+.col-centered{
+	display:inline-block;
+    float:none;
+	text-align: center;
 }
 /**************************
 * Header Styles 
@@ -616,10 +612,10 @@ a:hover {
 }
 @media all and (max-width: 850px){
 	.smallFont{
-		font-size: 17px!important;
+		font-size: 15.5px!important;
 	}
 	.contactButtons{
-		font-size: 24px;
+		font-size: 22px;
 	}
 }
 @media all and (min-width: 622px) and (max-width: 700px){
@@ -634,9 +630,15 @@ a:hover {
 /**************************
 * Gallery Page Styles
 **************************/
-#gallery{height: auto!important;}
+#gallery{
+	height: auto!important;
+	box-shadow: inset 0px -3px 7px -2px rgba(0,0,0,0.46);
+}
 #albumHeader{
 	border-image:   linear-gradient(to left,green 20px, yellow 20px, yellow 40px, red 40px, red 60px, teal 60px, teal 80px) 5;
+}
+#gallery .container-fluid{
+	margin: 0 2%;
 }
 /** Picture Box**/
 .picsBox{
@@ -672,24 +674,52 @@ a:hover {
 * Team Page Styles
 **************************/
 #team{
-	height: 1000px;
+	min-height: 700px;
 }
 #team .sectionHeader{
-	color: black;
 	border-image: linear-gradient(to right, grey 25%, yellow 25%, yellow 50%,red 50%, red 75%, teal 75%) 5;
+	color: black;
 }
+#team .container{ 
+    position: absolute;
+    right:0;
+	left:0;
+	margin: auto;
+}
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color:#fefcfa;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+#team .container-fluid{
+	padding-top: 155px;
+	margin: 0 6%;
+}
+@media all and (max-width: 400px){
+	#team .container-fluid{
+	padding-top: 230px;
+	}
+}
+/** Member Box**/
 .memberBox{
 	margin-bottom: 20px;
+	height: 200px;
+	width: 200px;
+	border-radius: 25%;
+	overflow: hidden;
 }
 .memberPic {
 	position: relative;
 	height: 200px;
 	width: 200px;
-	margin-bottom: 20px;	
+	margin-bottom: 20px;
 }
 .memberPic img{
 	height: 200px;
-	width: 200px;	
+	width: 200px;
 }
 .memberName{
 	position: absolute;
@@ -719,15 +749,17 @@ a:hover {
 	text-align: center;
 	opacity: 0;	
 }
+.memberBox:hover{
+    animation-name: borderRadiusChange;
+    animation-duration: 0.2s;
+	transition-timing-function:ease-out;
+	border-radius: 4%;	
+}
 .memberBox:hover .memberName{
     animation-name: nameRise;
     animation-duration: 0.2s;
 	transition-timing-function:ease-out;
 	bottom: 30px;opacity: 1;
-}
-@keyframes nameRise {
-    from {bottom:0;}
-    to {bottom: 30px;}
 }
 .memberBox:hover .memberDesignation{
     animation-name: designationRise;
@@ -735,7 +767,111 @@ a:hover {
 	transition-timing-function:ease-in;
 	bottom: 0;opacity: 1;
 }
+.active.center .memberBox{
+	animation-name: borderRadiusChange;
+    animation-duration: 0.2s;
+	transition-timing-function:ease-out;
+	border-radius: 4%;
+}
+.active.center .memberDesignation{
+    animation-name: designationRise;
+    animation-duration: 0.2s;
+	transition-timing-function:ease-in;
+	bottom: 0;opacity: 1;	
+}
+.active.center .memberName{
+    animation-name: nameRise;
+    animation-duration: 0.2s;
+	transition-timing-function:ease-out;
+	bottom: 30px;opacity: 1;
+}
 @keyframes designationRise {
     from {bottom:-30px;}
     to {bottom: 0;}
+}
+@keyframes nameRise {
+    from {bottom:0;}
+    to {bottom: 30px;}
+}
+@keyframes borderRadiusChange {
+    from {border-radius:25%;}
+    to {border-radius: 4%;}	
+}
+/** Alumni Box**/
+.alumniBox{
+	margin-bottom: 20px;
+	height: 150px;
+	width: 320px;
+}
+.alumniPic{
+	position: relative;
+	height: 150px;
+	width: 150px;
+	margin-bottom: 20px;
+}
+.alumniPic img{
+	height: 150px;
+	width: 150px;
+}
+.alumniName{
+	position: absolute;
+	bottom: 0;
+	background-color: #fff;
+	height: 30px;
+	width: 100%;
+	font-family: 'Bree Serif', serif;
+	font-size: 20px;
+	color: black;
+	text-align: center;
+	opacity: 0.8;
+}
+.alumniQuote{
+	position: absolute;
+	top: 0;
+	left: 150px;
+	height: 150px;
+	width: 170px;
+	font-family: 'Bree Serif', serif;
+	font-size: 17.5px;
+	color: black;
+	opacity: 1;
+	line-height: 25px;
+	text-align: center;
+	background-color: #fff;
+	padding:  0 23px;
+	overflow: auto;
+}
+.alumniQuote::before{
+    content: "\f10d";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    left: 3px;
+}
+.alumniPic::after{
+    content: "\f10e";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    right: -167px;
+}
+/** Help Section**/
+#help{
+	height: 100px;
+	background-color: #cfd8dc;
+	box-shadow: inset 0px 0px 7px 1px rgba(0,0,0,0.75);
+}
+#help i{
+	transform: translateY(50%);
+	font-size: 50px;
 }

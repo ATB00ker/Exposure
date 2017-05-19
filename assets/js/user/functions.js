@@ -86,16 +86,60 @@ $(document).on("loadComplete", function(){
 	dataIntegration();
 // ----Initiate Golden Gallery function---- //
 	$('#dg-container').gallery();
-// ----Initiate Albums---- //
-	$(".owl-carousel").owlCarousel({
+// ----Owl Carosel initiate---- //
+	$("#facebookCollection").owlCarousel({
 		autoWidth: true,
 		center: true,
 		loop:true,
 		margin: 20,
 		autoplay:true,
 		autoplayTimeout:3000,
-		autoplayHoverPause:true,
+		autoplayHoverPause:true
 	});
+	if ($(window).width() < 760){
+		$( "#teamExposure" ).addClass( "owl-carousel" );
+		$("#teamExposure").owlCarousel({
+			rtl:true,
+			center: true,
+			loop:true,
+			autoplay:true,
+			autoplayTimeout:2000,
+			autoplayHoverPause:true,
+			afterAction: function(el){
+			   //remove class active
+			   this
+			   .$owlItems
+			   .removeClass('active')		 
+			   //add class active
+			   this
+			   .$owlItems //owl internal $ object containing items
+			   .eq(this.currentItem)
+			   .addClass('active')
+			},
+			responsive:{
+				0:{items:1},
+				480:{items:1.9},
+				624:{items:2.2},
+				680:{items:2.4}
+			}	 
+		});
+	}
+	if ($(window).width() < 825){
+		$( "#alumniExposure" ).addClass( "owl-carousel" );
+		$("#alumniExposure").owlCarousel({
+			center: true,
+			margin: 20,
+			loop:true,
+			autoplay:true,
+			autoplayTimeout:2500,
+			autoplayHoverPause:true,
+			items:1	 
+		});
+	}
+if ($(window).width() < 400)
+	$("#team").css("height",$("#teamExposure").height() + $("#alumniExposure").height() + 371);//Set the height of parent section.
+else
+	$("#team").css("height",$("#teamExposure").height() + $("#alumniExposure").height() + 300);;//Set the height of parent section.
 });
 /**************************
 * Detect Swipe
@@ -176,6 +220,7 @@ function toggleFullScreen() {
 var goldenCollectionContainer = $('.dg-wrapper');
 var facebookCollectionContainer = $('#facebookCollection');
 var teamExposureContainer = $('#teamExposure');
+var alumniExposureContainer = $('#alumniExposure');
 function dataIntegration(){
 	for (var x in goldenCollection){
 		var html = '<a href="#"><img src="'+goldenCollection[x].img+'"><div>'+goldenCollection[x].text+'</div></a>';
@@ -193,8 +238,12 @@ function dataIntegration(){
 		facebookCollectionContainer.append(html);
 	}
 	for (var x in team){
-		html = '<div class="memberBox"><a href="'+team[x].link+'"><div class="memberPic"><img src="'+team[x].photo+'"><div class="memberName">'+team[x].name+'</div><div class="memberDesignation">'+team[x].designation+'</div></div></a></div>';
+		html = '<div class="col-centered col-sm-4 col-lg-3"><div class="memberBox"><a href="'+team[x].link+'"><div class="memberPic"><img src="'+team[x].photo+'"><div class="memberName">'+team[x].name+'</div><div class="memberDesignation">'+team[x].designation+'</div></div></a></div></div>';
 		teamExposureContainer.append(html);
+	}
+	for (var x in alumni){
+		html = '<div class="col-centered col-sm-6 col-lg-5"><div class="alumniBox"><div class="alumniPic"><img src="'+alumni[x].photo+'"><div class="alumniName">'+alumni[x].name+'</div><div class="alumniQuote">'+alumni[x].quote+'</div></div></div></div>';
+		alumniExposureContainer.append(html);
 	}
 }
 /**************************
@@ -212,7 +261,7 @@ else
 	sr.reveal('#workshops', {distance: '200px', origin: 'bottom',viewOffset: {top: -1000,bottom: 200}, scale: 1});
 sr.reveal('#internalCmpt', {distance: '200px', origin: 'left'});
 sr.reveal('.contactButtons', { duration: 1000 }, 50);
-sr.reveal('.sectionHeader', { duration: 1000 });
+sr.reveal('#gallery .sectionHeader', { duration: 1000 });
 sr.reveal('.dg-wrapper', { duration: 1000, viewOffset: {top: -200}});
 sr.reveal('.dg-next', { duration: 1000, viewOffset: {top: 200, bottom: -400}});
 sr.reveal('.dg-prev', { duration: 1000, viewOffset: {top: 200, bottom: -400}});

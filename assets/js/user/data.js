@@ -25,4 +25,12 @@ team[3] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg",
 team[4] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
 team[5] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
 team[6] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
-team[7] = {name:"Sample",designation:"Test", photo:"./assets/images/team/1.jpg", link:"./Redirect.html"};
+/**************************
+* Alumnis' Section
+**************************/
+alumni[0] = {name:"Sample",quote:"Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test", photo:"./assets/images/alumni/1.jpg"};
+alumni[1] = {name:"Sample",quote:"Test", photo:"./assets/images/alumni/1.jpg"};
+alumni[2] = {name:"Sample",quote:"Test", photo:"./assets/images/alumni/1.jpg"};
+alumni[3] = {name:"Sample",quote:"Test", photo:"./assets/images/alumni/1.jpg"};
+alumni[4] = {name:"Sample",quote:"Test", photo:"./assets/images/alumni/1.jpg"};
+alumni[5] = {name:"Sample",quote:"Test", photo:"./assets/images/alumni/1.jpg"};

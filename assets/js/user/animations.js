@@ -169,7 +169,6 @@ $("#photowalk").mouseleave(function(){
 		photowalkFlag = false;
 	}
 });
-
 					/*******Internal Competition Section *******/
 var borderFlag = false;
 $("#detectTopRight").mouseenter(function(){
