@@ -24,7 +24,7 @@ $("#NavigationList").append(html);
 /**************************
 * Page Load Functions
 **************************/
-//$("html, body").animate({ scrollTop: 0.01});//Scroll Screen to top at reload
+$("html, body").animate({ scrollTop: 0.01});//Scroll Screen to top at reload
 var reloadFlag = $(window).width();
 $(window).resize(function() {
 	setHeight();
@@ -133,13 +133,20 @@ $(document).on("loadComplete", function(){
 			autoplay:true,
 			autoplayTimeout:2500,
 			autoplayHoverPause:true,
-			items:1	 
+			items:1,
+			responsive:{
+				410:{
+					center: false,
+					margin: 0,
+				}
+			}	
 		});
 	}
 if ($(window).width() < 400)
 	$("#team").css("height",$("#teamExposure").height() + $("#alumniExposure").height() + 371);//Set the height of parent section.
 else
 	$("#team").css("height",$("#teamExposure").height() + $("#alumniExposure").height() + 300);;//Set the height of parent section.
+	KUTE.to('#preloader',{scale: 1.1, opacity: 0}, {duration:600, easing: 'easingCubicOut'}).chain(KUTE.to('#preloader',{scale: 0}, {duration:1})).start();
 });
 /**************************
 * Detect Swipe
@@ -198,21 +205,38 @@ function toggleFullScreen() {
   if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
    (!document.mozFullScreen && !document.webkitIsFullScreen)) {
     if (document.documentElement.requestFullScreen) {  
-      document.documentElement.requestFullScreen();  
+      document.documentElement.requestFullScreen();
     } else if (document.documentElement.mozRequestFullScreen) {  
-      document.documentElement.mozRequestFullScreen();  
+      document.documentElement.mozRequestFullScreen();
     } else if (document.documentElement.webkitRequestFullScreen) {  
       document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
     }  
   } else {  
-    if (document.cancelFullScreen) {  
+    if (document.cancelFullScreen) {
       document.cancelFullScreen();  
     } else if (document.mozCancelFullScreen) {  
       document.mozCancelFullScreen();  
     } else if (document.webkitCancelFullScreen) {  
       document.webkitCancelFullScreen();  
     }  
-  }  
+  }
+}
+if (document.addEventListener)
+{
+    document.addEventListener('webkitfullscreenchange', changeHandler, false);
+    document.addEventListener('mozfullscreenchange', changeHandler, false);
+    document.addEventListener('fullscreenchange', changeHandler, false);
+    document.addEventListener('MSFullscreenChange', changeHandler, false);
+}
+function changeHandler(){
+    if (document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement === false){
+		$("html, body").scrollTop($("#gallery").offset().top);
+		$("#gallery").css("backgroundImage","url('./assets/images/Gallery/gallerybg.jpg')");
+		$('body').css('overflow-y', 'hidden');
+    } else {
+		$("#gallery").css("backgroundImage","url('')");
+		$('body').css('overflow-y','scroll');	
+	}
 }
 /**************************
 * Data Integration

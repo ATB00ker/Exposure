@@ -39,7 +39,6 @@
 	.dg-wrapper{width: 381px;}
 	.dg-wrapper a img{width: 400px;}
 	.dg-container{height: 550px!important;}
-	#dg-dynamicPosition{height: 350px!important;}
 }
 @media all and (max-width: 500px){
 	.dg-wrapper{
@@ -103,8 +102,9 @@
 #dg-dynamicPosition{
 	position: relative;
     z-index:10;
-	height: 380px;
+	height: 355px;
 }
+@media all and (max-width: 500px){#dg-dynamicPosition{height: 280px;}}
 .dg-container a{
 	transform: translateY(-8px);	
 }
