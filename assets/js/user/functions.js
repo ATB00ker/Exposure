@@ -51,15 +51,6 @@ var thisTop = $(this).offset().top - $(window).scrollTop();
 	else { return false; }
 };
 /**************************
-* Parallax Scroll Initiate
-**************************/
-(function($){
-  $(function(){
-    $('.button-collapse').sideNav();
-    $('.parallax').parallax();
-  });
-})(jQuery);
-/**************************
 * Check Touch Screen
 **************************/
 var hasTouchCapabilities = 'ontouchstart' in window && (navigator.maxTouchPoints || navigator.msMaxTouchPoints);
@@ -146,7 +137,7 @@ if ($(window).width() < 400)
 	$("#team").css("height",$("#teamExposure").height() + $("#alumniExposure").height() + 371);//Set the height of parent section.
 else
 	$("#team").css("height",$("#teamExposure").height() + $("#alumniExposure").height() + 300);;//Set the height of parent section.
-	KUTE.to('#preloader',{scale: 1.1, opacity: 0}, {duration:600, easing: 'easingCubicOut'}).chain(KUTE.to('#preloader',{scale: 0}, {duration:1})).start();
+	KUTE.to('#preloader',{scale: 0.001, opacity: 0}, {duration:600, easing: 'easingCubicOut',complete: $('body').css('overflow-y','scroll')}).chain(KUTE.to('#preloader',{scale: 0}, {duration:1})).start();
 });
 /**************************
 * Detect Swipe

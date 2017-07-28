@@ -123,11 +123,9 @@ function eventCompetitions() {
 var photowalkFlag = false;
 KUTE.fromTo(photowalkPic1,{opacity: 1, left: 100}, {opacity: 0, left: 0}, {duration: 100}).start();
 KUTE.fromTo(photowalkPic3,{opacity: 1, left: -100}, {opacity: 0, left: 0}, {duration: 100}).start();
-$(photowalkPic2).addClass("shake-slow shake-constant");
 $(window).scroll(function(){
 	if($(photowalkDescription).isInViewportMiddle()){
 		if(photowalkFlag==false){
-			$(photowalkPic2).removeClass("shake-slow shake-constant");
 			KUTE.to(photowalkDescription, {color: '#000'}, {duration: 100}).start();
 			KUTE.fromTo(photowalkPic1,{opacity: 0, left: 100}, {opacity: 1, left: 0}, {duration: 100}).start();
 			KUTE.fromTo(photowalkPic3,{opacity: 0, left: -100}, {opacity: 1, left: 0}, {duration: 100}).start();
@@ -137,7 +135,6 @@ $(window).scroll(function(){
 		}
 	} else {
 		if(photowalkFlag==true){
-			$(photowalkPic2).addClass("shake-slow shake-constant");
 			KUTE.fromTo(photowalkPic1,{opacity: 1, left: 100}, {opacity: 0, left: 0}, {duration: 100}).start();
 			KUTE.to(photowalkDescription, {color: '#A8A8A8'}, {duration: 100}).start();
 			KUTE.fromTo(photowalkPic3,{opacity: 1, left: -70}, {opacity: 0, left: 0}, {duration: 100}).start();
@@ -149,7 +146,6 @@ $(window).scroll(function(){
 });
 $(photowalkPic2).mouseenter(function(){
 	if(photowalkFlag == false) {
-		$(photowalkPic2).removeClass("shake-slow shake-constant");
 		KUTE.to(photowalkDescription, {color: '#000'}, {duration: 100}).start();
 		KUTE.fromTo(photowalkPic1,{opacity: 0, left: 100}, {opacity: 1, left: 0}, {duration: 100}).start();
 		KUTE.fromTo(photowalkPic3,{opacity: 0, left: -100}, {opacity: 1, left: 0}, {duration: 100}).start();
@@ -160,7 +156,6 @@ $(photowalkPic2).mouseenter(function(){
 });
 $("#photowalk").mouseleave(function(){
 	if(photowalkFlag == true) {
-		$(photowalkPic2).addClass("shake-slow shake-constant");
 		KUTE.fromTo(photowalkPic1,{opacity: 1, left: 100}, {opacity: 0, left: 0}, {duration: 100}).start();
 		KUTE.to(photowalkDescription, {color: '#A8A8A8'}, {duration: 100}).start();
 		KUTE.fromTo(photowalkPic3,{opacity: 1, left: -70}, {opacity: 0, left: 0}, {duration: 100}).start();
